@@ -15,14 +15,14 @@ namespace Simplant
             Parallel.For(start, stop,
                 i =>
                 {
-                    long newStart;
                     lock (obj)
                     {
-                        newStart = start;
-                        start = i = newStart + diapazon > stop ? stop : newStart + diapazon;
+                        var newStart = start;
+                        start = newStart + diapazon > stop ? stop : newStart + diapazon;
+
+                        if (start != stop)
+                            Task.Factory.StartNew(() => MainClassJoin.Start(newStart, start));
                     }
-                    
-                    Task.Factory.StartNew(() => MainClassJoin.Start(newStart, i));
                 });
         }
     }

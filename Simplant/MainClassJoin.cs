@@ -13,7 +13,7 @@ namespace Simplant
             var key = _key;
             var last = _last;
 
-            using (var sw = new StreamWriter(DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss")+".txt", true))
+            using (var sw = new StreamWriter(DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss-ffff")+".txt", true))
             {
                 Parallel.For(key, last, i =>
                 {
