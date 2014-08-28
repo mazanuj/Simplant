@@ -1,6 +1,0 @@
-C:\Users\Мазяка\Desktop\PROGRAMS\GitHub\Simplant\Simplant\bin\Debug\Simplant.exe.config
-C:\Users\Мазяка\Desktop\PROGRAMS\GitHub\Simplant\Simplant\bin\Debug\Simplant.exe
-C:\Users\Мазяка\Desktop\PROGRAMS\GitHub\Simplant\Simplant\bin\Debug\Simplant.pdb
-C:\Users\Мазяка\Desktop\PROGRAMS\GitHub\Simplant\Simplant\obj\Debug\Simplant.csprojResolveAssemblyReference.cache
-C:\Users\Мазяка\Desktop\PROGRAMS\GitHub\Simplant\Simplant\obj\Debug\Simplant.exe
-C:\Users\Мазяка\Desktop\PROGRAMS\GitHub\Simplant\Simplant\obj\Debug\Simplant.pdb
