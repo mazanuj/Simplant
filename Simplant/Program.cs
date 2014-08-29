@@ -1,33 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Simplant
 {
     internal static class Program
     {
-        private static void Main()        
+        private static void Main()
         {
-            //MainClassJoin.Start(0x7D466EEE56D40200, 0x7D466EEE56D40300);
+            var validList = new List<string>(Range.Start(0x7D466EEE56D4D000, 0x7D466EEE56D4E000, 500));
 
-            //var t1 = new Task(() => MainClass.Start(0x7D46, 0x6EEE, 0x56D4, 0x0000, 0x7D46, 0x6EEE, 0x56D4, 0x5000));
-            //var t2 = new Task(() => MainClass.Start(0x7D46, 0x6EEE, 0x56D4, 0x5000, 0x7D46, 0x6EEE, 0x56D5, 0x0000));
+            using (var sw = new StreamWriter(DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss-ffff") + ".txt", true))
+            {
+                Parallel.ForEach(validList, (value) =>
+                {
+                    sw.WriteLine(value);
+                });
 
-            //t1.Start();
-            //t2.Start();
-
-            //var t3 = new Thread(t1.Start);
-            //t3.Start();
-
-            //var t4 = new Thread(t2.Start);
-            //t4.Start();
-
-            //Parallel.Invoke(
-            //    () => MainClassJoin.Start(0x7D466EEE56D40200, 0x7D466EEE56D40300),
-            //    () => MainClassJoin.Start(0x7D466EEE56D40300, 0x7D466EEE56D40400),
-            //    () => MainClassJoin.Start(0x7D466EEE56D40400, 0x7D466EEE56D40500),
-            //    () => MainClassJoin.Start(0x7D466EEE56D40500, 0x7D466EEE56D40600)
-            //);
-
-            Range.Start(0x7D466EEE56D40200, 0x7D466EEE56D41250, 50);
+                sw.Flush();
+                sw.Close();
+            }
 
             Console.ReadKey();
         }
